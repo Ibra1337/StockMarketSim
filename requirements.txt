@@ -1,0 +1,5 @@
+yfinance
+Pillow
+sqlalchemy
+pandas
+matplotlib
