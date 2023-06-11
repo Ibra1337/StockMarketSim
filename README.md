@@ -23,7 +23,7 @@ collect data about stocks
 display OHCLgrap for each stock 
 
 ### Module breakdown
--** DBHandler **: module responsible for handling operations connected with database 
+-**DBHandler**: module responsible for handling operations connected with database 
 -**LoginFrame** : frame responsible for login part
 -**StartFrame** : welcoming frame
 -**DisplayStockFrame** : frame responsible for buying/selling stocks displaying graphs and displaying prices
