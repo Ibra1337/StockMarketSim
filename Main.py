@@ -11,10 +11,8 @@ def resize_background(event):
     width = event.width
     height = event.height
 
-    # Resize the background image to the window size
     resized_image = original_image.resize((width, height), Image.LANCZOS)
 
-    # Update the background image
     root.background_image = ImageTk.PhotoImage(resized_image)
     background_label.config(image=root.background_image)
 
@@ -32,7 +30,6 @@ y_position = (screen_height - smaller_height) // 2
 root.title("Background Example")
 root.geometry(f"{smaller_width}x{smaller_height}+{x_position}+{y_position}")
 
-# Load the original background image using PIL
 original_image = Image.open("bg.png")
 
 engine = create_engine('sqlite:///usersdatabase.db')
@@ -40,19 +37,16 @@ dbh = DatabaseHandler(engine)
 sf = StartFrame.StartFrame(root , dbh)
 sf.place(relx=0.5, rely=0.5, anchor="center")
 
-
 # Resize the image to fit the initial window size
 width, height = root.winfo_width(), root.winfo_height()
 resized_image = original_image.resize((width, height), Image.LANCZOS)
 
-# Create the background label on the root window, filling the entire window
 root.background_image = ImageTk.PhotoImage(resized_image)
 background_label = tk.Label(root, image=root.background_image)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-# Bind the resize_background function to the window resize event
 root.bind("<Configure>", resize_background)
-sf.lift()  # Raise the sf frame above other widgets
+sf.lift() 
 python_file = "DBHandler.py"
 
 
