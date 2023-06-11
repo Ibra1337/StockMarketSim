@@ -7,7 +7,6 @@ from sqlalchemy import create_engine, inspect
 from DBHandler import DatabaseHandler
 
 def resize_background(event):
-    # Get the current window size
     width = event.width
     height = event.height
 
@@ -37,7 +36,6 @@ dbh = DatabaseHandler(engine)
 sf = StartFrame.StartFrame(root , dbh)
 sf.place(relx=0.5, rely=0.5, anchor="center")
 
-# Resize the image to fit the initial window size
 width, height = root.winfo_width(), root.winfo_height()
 resized_image = original_image.resize((width, height), Image.LANCZOS)
 
